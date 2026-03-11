@@ -1,52 +1,105 @@
 import Link from "next/link";
 
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-[#070b14] text-[#e0e8ff] flex flex-col items-center justify-center p-6 font-sans">
-      <div className="max-w-2xl text-center space-y-8">
-        <h1 className="text-4xl md:text-5xl font-bold font-serif bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-          SDE 1 Frontend Interview Prep
-        </h1>
-        <p className="text-lg text-[#8fa0c0] leading-relaxed">
-          The ultimate preparation guide for high-paying frontend developer
-          jobs. Track your progress through core Data Structures tailored for UI
-          roles, and deep-dive into JavaScript, React, and System Design.
-        </p>
+  const companies = [
+    "STRIPE",
+    "SLICE",
+    "RAZORPAY",
+    "CRED",
+    "VERCEL",
+    "SWIGGY",
+    "ZOMATO",
+    "PAYTM",
+    "ZEPTO",
+    "AIRBNB",
+    "UBER",
+    "DISCORD",
+  ];
 
-        <div className="flex flex-col sm:flex-row gap-5 justify-center mt-8">
+  return (
+    <main className="min-h-screen bg-[#020604] text-zinc-300 flex flex-col items-center justify-center relative overflow-hidden">
+      {/* Background glow effects */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-emerald-900/20 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="max-w-3xl text-center space-y-10 z-10 w-full mt-24">
+        {/* Top Badge */}
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-800/30 text-emerald-400 text-xs font-mono font-medium tracking-wide">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          Updated for 2026 Architectures
+        </div>
+
+        {/* Headline */}
+        <div className="space-y-4">
+          <h1 className="text-5xl md:text-7xl font-extrabold font-montserrat tracking-tight leading-tight text-white drop-shadow-sm">
+            Crack the{" "}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-300">
+              Frontend
+            </span>{" "}
+            <br className="hidden md:block" />
+            Interview.
+          </h1>
+          <p className="text-lg md:text-xl text-zinc-400 leading-relaxed max-w-2xl mx-auto font-mono mt-4">
+            Curated, high-signal questions for SDE 1 UI roles. Master React
+            internals, modern JavaScript, System Design, and UI-focused DSA.
+          </p>
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center ">
           <Link
             href="/round-1"
-            className="flex items-center gap-3 px-6 py-4 bg-[#1a2540] hover:bg-[#2a3a5a] border border-[#2a3a5a] rounded-xl transition-all group"
+            className="group relative flex items-center justify-center gap-3 px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-bold font-montserrat rounded-lg transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]"
           >
-            <span className="text-2xl">🧮</span>
-            <div className="text-left">
-              <h2 className="font-bold text-[#e0e8ff] text-lg group-hover:text-blue-400 transition-colors">
-                Start Round 1
-              </h2>
-              <p className="text-xs text-[#7a8aaa] font-mono">
-                DSA & Problem Solving
-              </p>
-            </div>
+            <span>Round 1: DSA & Logic</span>
+            <span className="group-hover:translate-x-1 transition-transform">
+              →
+            </span>
           </Link>
 
           <Link
             href="/round-2"
-            className="flex items-center gap-3 px-6 py-4 bg-[#1a2540] hover:bg-[#2a3a5a] border border-[#2a3a5a] rounded-xl transition-all group"
+            className="group flex items-center justify-center gap-3 px-8 py-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-emerald-500/50 text-white font-bold font-montserrat rounded-lg transition-all duration-300"
           >
-            <span className="text-2xl">⚛️</span>
-            <div className="text-left">
-              <h2 className="font-bold text-[#e0e8ff] text-lg group-hover:text-purple-400 transition-colors">
-                Start Round 2
-              </h2>
-              <p className="text-xs text-[#7a8aaa] font-mono">
-                JS, React & System Design
-              </p>
-            </div>
+            <span>Round 2: Core Frontend</span>
+            <span className="text-zinc-500 group-hover:text-emerald-400 transition-colors">
+              ⚛️
+            </span>
           </Link>
         </div>
 
-        <div className="pt-12 text-sm text-[#444d6a] font-mono">
-          Progress is saved automatically in your browser.
+        <div className="text-xs text-zinc-600 font-mono tracking-wider">
+          PROGRESS SAVED LOCALLY. NO LOGIN REQUIRED.
+        </div>
+
+        {/* Marquee Section */}
+        <div className="pt-10 pb-12 w-full flex flex-col items-center">
+          <p className="text-xs text-zinc-600 font-mono uppercase tracking-[0.2em] mb-6">
+            Prepare for top engineering teams
+          </p>
+
+          <div
+            className="w-full max-w-5xl overflow-hidden"
+            style={{
+              maskImage:
+                "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+            }}
+          >
+            <div className="flex w-max animate-marquee space-x-12 whitespace-nowrap">
+              {/* Double array to create infinite seamless loop */}
+              {[...companies, ...companies].map((name, idx) => (
+                <div
+                  key={idx}
+                  className="text-zinc-500 font-montserrat font-bold text-xl md:text-2xl opacity-50 flex items-center gap-12"
+                >
+                  {name}
+                  {/* Divider dot */}
+                  <span className="text-zinc-800 text-sm">✦</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </main>
