@@ -1,5 +1,22 @@
 import Link from "next/link";
 
+const EXTERNAL_RESOURCES = [
+  {
+    href: "https://www.greatfrontend.com/interviews/gfe75",
+    label: "GFE 75",
+    sublabel: "GreatFrontEnd",
+    desc: "75 curated frontend interview questions covering React, JavaScript, CSS, and system design.",
+    tag: "Frontend Focused",
+  },
+  {
+    href: "https://www.greatfrontend.com/interviews/blind75",
+    label: "Blind 75",
+    sublabel: "GreatFrontEnd",
+    desc: "The classic 75 LeetCode problems every software engineer should know. Great for DSA prep.",
+    tag: "DSA Classic",
+  },
+];
+
 export default function Home() {
   const companies = [
     "STRIPE",
@@ -14,74 +31,124 @@ export default function Home() {
     "AIRBNB",
     "UBER",
     "DISCORD",
+    "FLIPKART",
+    "MEESHO",
+    "GROWW",
   ];
 
   return (
-    <main className="min-h-screen bg-[#020604] text-zinc-300 flex flex-col items-center justify-center relative overflow-hidden">
-      {/* Background glow effects */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-emerald-900/20 blur-[120px] rounded-full pointer-events-none" />
-      {/* <RetroGrid /> */}
+    <main className="min-h-screen bg-[#0c0c0c] text-zinc-300 flex flex-col items-center justify-center relative overflow-hidden">
+      {/* Subtle background gradient */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-stone-800/10 blur-[100px] rounded-full pointer-events-none" />
 
-      <div className="max-w-3xl text-center space-y-12 z-10 w-full mt-12">
-        {/* Top Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-800/30 text-emerald-400 text-xs font-mono font-medium tracking-wide">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+      <div className="max-w-2xl text-center space-y-10 z-10 w-full mt-12 px-6">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-stone-900/60 border border-stone-700/30 text-stone-400 text-xs font-mono tracking-wide">
+          <span className="w-1.5 h-1.5 rounded-full bg-stone-400 animate-pulse" />
           Updated for 2026 Experiences
         </div>
 
         {/* Headline */}
-        <div className="space-y-4">
-          <h1 className="text-5xl md:text-7xl font-medium font-montserrat tracking-tight leading-tight text-white drop-shadow-sm">
+        <div className="space-y-3">
+          <h1 className="text-5xl md:text-6xl font-semibold font-montserrat tracking-tight leading-tight text-stone-100">
             Crack the{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-300">
-              Frontend
-            </span>{" "}
-            <br className="hidden md:block" />
+            <span className="text-stone-300">Frontend</span>{" "}
             Interview.
           </h1>
-          <p className="text-xs sm:text-sm md:text-base text-zinc-400 leading-relaxed max-w-2xl mx-auto font-mono mt-4">
+          <p className="text-xs sm:text-sm text-stone-500 leading-relaxed max-w-xl mx-auto font-mono mt-3">
             Curated, high-signal questions for SDE 1 UI roles. Master React
-            internals, modern JavaScript, System Design, and UI-focused DSA.
+            internals, modern JavaScript, system design, and machine coding.
           </p>
         </div>
 
-        {/* CTA Buttons */}
-        <div className="w-full flex flex-col gap-6">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/round-1"
-              className="group relative flex items-center justify-center gap-3 px-6 py-2 bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-montserrat rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.2)] text-sm font-medium hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]"
-            >
-              <span>Round 1: DSA & Logic</span>
-              <span className="group-hover:translate-x-1 transition-transform">
-                →
-              </span>
-            </Link>
-
-            <Link
-              href="/round-2"
-              className="group flex items-center justify-center gap-3 px-6 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-emerald-500/50 text-white font-montserrat rounded-full transition-all duration-300"
-            >
-              <span>Round 2: Core Frontend</span>
-              <span className="text-zinc-500 group-hover:text-emerald-400 transition-colors">
-                ⚛️
-              </span>
-            </Link>
-          </div>
-
-          <div className="text-xs text-zinc-600 font-mono tracking-wider">
-            PROGRESS SAVED LOCALLY. NO LOGIN REQUIRED.
-          </div>
+        {/* Primary CTA — Flipkart Prep */}
+        <div className="w-full text-left">
+          <Link
+            href="/flipkart"
+            className="group flex items-center gap-4 px-5 py-4 rounded-lg border transition-all duration-200"
+            style={{
+              background: "#161412",
+              borderColor: "#3a3028",
+            }}
+          >
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-stone-200 font-semibold text-sm font-montserrat">
+                  Flipkart SDE 1 Prep
+                </span>
+                <span className="text-stone-500 text-xs font-mono">
+                  · Latest Interview Questions
+                </span>
+                <span className="ml-auto text-[9px] font-mono font-semibold px-2 py-0.5 rounded bg-amber-900/30 text-amber-500/80 border border-amber-800/30 tracking-widest">
+                  HOT · 2026
+                </span>
+              </div>
+              <p className="text-stone-500 text-xs leading-relaxed">
+                JavaScript core, React hooks, Redux, system design, machine coding, and behavioral — all from real Flipkart SDE 1 interviews.
+              </p>
+            </div>
+            <span className="text-stone-600 group-hover:text-stone-300 transition-colors text-sm flex-shrink-0">
+              →
+            </span>
+          </Link>
         </div>
 
-        {/* Marquee Section */}
-        <div className="pt-6 pb-12 w-full flex flex-col items-center">
-          <p className="text-xs text-zinc-600 font-mono uppercase tracking-[0.2em] mb-6">
+        {/* Divider */}
+        <div className="flex items-center gap-3 w-full">
+          <div className="flex-1 h-px bg-stone-800/60" />
+          <span className="text-stone-600 text-[10px] font-mono tracking-widest">ALSO EXPLORE</span>
+          <div className="flex-1 h-px bg-stone-800/60" />
+        </div>
+
+        {/* External Resources */}
+        <div className="w-full flex flex-col gap-3 text-left">
+          {EXTERNAL_RESOURCES.map((r) => (
+            <a
+              key={r.href}
+              href={r.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-4 px-5 py-4 rounded-lg border transition-all duration-200"
+              style={{
+                background: "#111",
+                borderColor: "#1e1e1e",
+              }}
+            >
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-0.5">
+                  <span className="text-stone-300 font-medium text-sm font-montserrat">
+                    {r.label}
+                  </span>
+                  <span className="text-stone-600 text-xs font-mono">
+                    · {r.sublabel}
+                  </span>
+                  <span className="ml-auto text-[9px] font-mono text-stone-600 tracking-widest">
+                    {r.tag}
+                  </span>
+                </div>
+                <p className="text-stone-600 text-xs leading-relaxed line-clamp-1">
+                  {r.desc}
+                </p>
+              </div>
+              <span className="text-stone-700 group-hover:text-stone-400 transition-colors text-xs flex-shrink-0 font-mono">
+                ↗
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <div className="text-[10px] text-stone-700 font-mono tracking-widest pb-2">
+          PROGRESS SAVED LOCALLY · NO LOGIN REQUIRED
+        </div>
+
+        {/* Marquee */}
+        <div className="pb-12 w-full flex flex-col items-center">
+          <p className="text-[10px] text-stone-700 font-mono uppercase tracking-[0.2em] mb-5">
             Prepare for top engineering teams
           </p>
 
           <div
-            className="w-full max-w-5xl overflow-hidden"
+            className="w-full max-w-2xl overflow-hidden"
             style={{
               maskImage:
                 "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
@@ -89,16 +156,14 @@ export default function Home() {
                 "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
             }}
           >
-            <div className="flex w-max animate-marquee space-x-12 whitespace-nowrap">
-              {/* Double array to create infinite seamless loop */}
+            <div className="flex w-max animate-marquee space-x-10 whitespace-nowrap">
               {[...companies, ...companies].map((name, idx) => (
                 <div
                   key={idx}
-                  className="text-zinc-500 font-montserrat font-bold text-xl md:text-2xl opacity-50 flex items-center gap-12"
+                  className="text-stone-700 font-montserrat font-semibold text-base md:text-lg flex items-center gap-10"
                 >
                   {name}
-                  {/* Divider dot */}
-                  <span className="text-zinc-800 text-sm">✦</span>
+                  <span className="text-stone-800 text-xs">·</span>
                 </div>
               ))}
             </div>
